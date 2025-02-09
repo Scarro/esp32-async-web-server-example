@@ -90,7 +90,7 @@ void setup() {
 
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
         if(request->hasParam("toggle")) {
-            AsyncWebParameter* led = request->getParam("toggle");
+            const AsyncWebParameter* led = request->getParam("toggle");
             Serial.print("Toggle LED #");
             Serial.println(led->value());
       
